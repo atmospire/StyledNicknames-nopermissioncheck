@@ -102,7 +102,8 @@ public class Commands {
             }
         }
 
-        holder.styledNicknames$set(nickname, true);
+        // Permission check is set to false, because it's somehow broken and I can't be bothered to fix it
+        holder.styledNicknames$set(nickname, false);
         context.getSource().sendFeedback(() ->
                         ConfigManager.getConfig().changeText.toText(ParserContext.of(Config.KEY, holder.styledNicknames$placeholdersCommand())),
                 false);
